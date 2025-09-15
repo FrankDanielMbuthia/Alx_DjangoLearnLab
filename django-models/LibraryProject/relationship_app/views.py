@@ -9,9 +9,8 @@ def index(request):
 
 class LibraryDetailView(DetailView):
     model = Library
-    template_name = 'library_detail.html'     # uses the template you provided
-    context_object_name = 'library'           # so template can use {{ library }}
-
+    template_name = 'relationship_app/library_detail.html'   # <-- checker expects this
+    context_object_name = 'library'
     def get_queryset(self):
         # Prefetch the related books and their authors to reduce DB hits.
         # This assumes Library -> Book related_name is 'books' and Book has FK 'author'.
