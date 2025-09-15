@@ -33,10 +33,10 @@ def register(request):
     return render(request, "relationship_app/register.html", {"form": form})
 
 def is_admin(user):
-    return user.userprofile.role == "admin"
+    return user.userprofile.role == "Admin"
 
 def is_librarian(user):
-    return user.userprofile.role == "Librarians"
+    return user.userprofile.role == "Librarian"
 
 def is_member(user):
     return user.userprofile.role == 'Member'
