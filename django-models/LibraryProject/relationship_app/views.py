@@ -67,6 +67,16 @@ def add_book(request):
         return redirect("list_books")
     return render(request, "add_book.html")
 
+# Edit a book
+@permission_required("relationship_app.can_change_book", raise_exception=True)
+def edit_book(request, book_id):
+    book = get_object_or_404(Book, id=book_id)
+    if request.method == "POST":
+        book.title = request.POST.get("title")
+        book.save()
+        return redirect("list_books")
+    return render(request, "edit_book.html", {"book": book})
+
 # Delete a book
 @permission_required("relationship_app.can_delete_book", raise_exception=True)
 def delete_book(request, book_id):
