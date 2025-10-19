@@ -1,4 +1,4 @@
-To begin, I know this is the repository used to do projects. I just want to make it clear I am not submiting prior projects, but I am specifically submitting the gym_management project in this repository. I used this repository just to bundle together my work.
+First of all, I know this is the repository used to do projects. I just want to make it clear I am not submiting prior projects, but I am specifically submitting the gym_management project in this repository. I used this repository just to bundle my work together.
 
 **GYM MANAGEMENT SYSTEM**
 
