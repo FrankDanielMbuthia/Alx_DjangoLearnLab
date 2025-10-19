@@ -13,4 +13,4 @@ class UserRegisterForm(forms.ModelForm):
 class MemberProfileForm(forms.ModelForm):
     class Meta:
         model = Member
-        fields = ["age", "address", "phone", "membership_plan"]
+        fields = ["age", "address", "phone"]

@@ -1,10 +1,25 @@
-<h2>Login</h2>
-<form method="POST">
-  {% csrf_token %}
-  <label>Username:</label>
-  <input type="text" name="username" required>
-  <label>Password:</label>
-  <input type="password" name="password" required>
-  <button type="submit">Login</button>
-</form>
-<p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Gym Management</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="auth-body">
+  <div class="auth-container">
+    <h2>Welcome Back</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" required>
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+    <p>Don’t have an account? <a href="{% url 'register' %}">Register</a></p>
+  </div>
+</body>
+</html>

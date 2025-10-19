@@ -1,8 +1,35 @@
-<h2>Welcome, {{ member.user.username }}</h2>
-<p>Age: {{ member.age }}</p>
-<p>Address: {{ member.address }}</p>
-<p>Phone: {{ member.phone }}</p>
-<p>Membership Plan: {{ member.membership_plan.name }}</p>
-<p>Joined: {{ member.join_date }}</p>
-<p>Expires: {{ member.expiry_date }}</p>
-<a href="{% url 'logout' %}">Logout</a>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Gym Management</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <nav class="navbar">
+    <h2>🏋️ Gym Management</h2>
+    <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+  </nav>
+
+  <div class="dashboard-container">
+    <h1>Welcome, {{ member.user.username }} 👋</h1>
+
+    <div class="dashboard-cards">
+      <div class="card">
+        <h3>👤 Profile Info</h3>
+        <p><strong>Age:</strong> {{ member.age }}</p>
+        <p><strong>Address:</strong> {{ member.address }}</p>
+        <p><strong>Phone:</strong> {{ member.phone }}</p>
+      </div>
+
+      <div class="card">
+        <h3>💪 Membership Details</h3>
+        <p><strong>Plan:</strong> {{ member.membership_plan.name }}</p>
+        <p><strong>Joined:</strong> {{ member.join_date }}</p>
+        <p><strong>Expires:</strong> {{ member.expiry_date }}</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
